@@ -67,4 +67,9 @@ compare records taken at different gaps.
 - The artefacts are **redacted in two places**: a local username in Proxmark session-log paths, and the
   page-1 factory-traceability words of an unrelated personal credential that some spare tags carry from an
   earlier restore. Both are incidental Proxmark output. No decode, verdict, air gap or firmware commit is
-  affected — `audit_artefacts.py` runs on the redacted files and reaches its findings unchanged.
+  affected, and that is established directly: **all 32 redacted rows sit inside a `Page 1` section, none
+  inside `Page 0`, and neither redacted word appears among the 20 block words any row asked for.**
+  ⚠ An earlier draft of this note argued it from `audit_artefacts.py` reaching its findings unchanged on
+  the redacted files. That argument was empty — the block check it rested on could not fail (it
+  substring-tested asked-for words against output containing the echoed `write` commands). The check is
+  fixed here, page-aware and index-bound; the conclusion above stands on the direct evidence instead.

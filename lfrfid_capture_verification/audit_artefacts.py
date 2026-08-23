@@ -79,13 +79,42 @@ for lbl in fixed:
 # 5. is each identity claim independently justifiable from the clone command?
 print("\n" + "=" * 78)
 print("IDENTITY BASIS, re-derived from the clone command with fresh code")
+
+def _page0_readback(text):
+    """{block_index: HEXWORD} from the PAGE 0 table of `lf t55xx dump`, and nothing else.
+
+    Scoped to the Page 0 section on purpose: the Page 1 table uses an identical row format, so an
+    unscoped parse silently accepts a page-1 row as page-0 evidence. Rows are `[+]  NN | XXXXXXXX | ...`.
+    Returns {} when no Page 0 section is present, which the caller must treat as NOT CONFIRMED.
+    """
+    m = re.search(r"Page\s*0(.*?)(?=Page\s*1|\Z)", text, re.S)
+    if not m:
+        return {}
+    out = {}
+    for row in re.finditer(r"^\s*\[\+\]\s+(\d{2})\s*\|\s*([0-9A-Fa-f]{8})\s*\|", m.group(1), re.M):
+        out[int(row.group(1))] = row.group(2).upper()
+    return out
+
+
 ARG = re.compile(r"--(fc|cn|id|uid|country|national|raw)\s+([0-9A-Fa-fx]+)|(?:^|\s)-r\s+([0-9A-Fa-f]+)")
 weak = []
 for lbl, r in sorted(base.items()):
     clone, raw, data = r.get("pm3_clone", ""), r.get("raw") or "", r.get("got_data") or ""
     if clone.startswith("T55XX:"):
         blocks = clone.split(":", 1)[1].split(",")
-        dump_ok = all(b.upper() in (r.get("pm3_out") or "").upper() for b in blocks)
+        # ⛔ WAS: `all(b.upper() in pm3_out.upper() for b in blocks)` -- a substring test against output
+        # that already contains the echoed `lf t55xx write -b N -d <word>` commands, so every asked-for
+        # word was guaranteed present and the check COULD NOT FAIL. Mutation-tested 2026-08-23: it returned
+        # True with the entire readback deleted, and True with every block read as DEADBEEF. It was a
+        # duplicate of the connectivity probe. Now the PAGE-0 dump table is parsed and each word must appear
+        # at its OWN block index.
+        _rb = _page0_readback(r.get("pm3_out") or "")
+        # Every asked-for word must appear at ITS OWN index. Blocks BEYOND the recipe are expected and are
+        # not evidence of anything: a reprogrammed tag keeps whatever the previous config left above the new
+        # maxblock (e.g. B3C6AD1F/CF649393/928C14E5 here, the tail of an earlier indala224 payload), and the
+        # tag never broadcasts them. So this is a subset relation, not equality -- an equality test fails
+        # two perfectly good rows, which is how this line was first written and caught.
+        dump_ok = bool(_rb) and all(_rb.get(i) == b.upper() for i, b in enumerate(blocks))
         basis = f"block readback {'OK' if dump_ok else 'NOT CONFIRMED'} ({len(blocks)} words)"
         if not dump_ok: problems.append(f"{lbl}: T55XX blocks not all present in the dump")
         # the pinned value must be traceable to the tag, not just to itself
