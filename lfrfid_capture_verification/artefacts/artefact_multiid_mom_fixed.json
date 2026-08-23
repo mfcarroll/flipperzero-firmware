@@ -1,0 +1,31 @@
+[
+ {
+  "build": "fixed-halfix",
+  "firmware_commit": "2e876de7",
+  "label": "em4100_multi",
+  "expect": "EM4100",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 40,
+  "pm3_clone": "T55XX:00148080,FF8C6529,8C94A940,FFD297BE,31BDF7A0",
+  "pm3_expect": "",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822162714.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf t55xx write -b 0 -d 00148080 --verify ; lf t55xx write -b 1 -d FF8C6529 --verify ; lf t55xx write -b 2 -d 8C94A940 --verify ; lf t55xx write -b 3 -d FFD297BE --verify ; lf t55xx write -b 4 -d 31BDF7A0 --verify ; lf t55xx detect ; lf t55xx dump\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf t55xx write -b 0 -d 00148080 --verify\n[=] Writing page 0  block: 00  data: 0x00148080 \n[=] Block0 write detected, running `detect` to see if validation is possible\n[=]  Chip type......... T55x7\n[=]  Modulation........ ASK\n[=]  Bit rate.......... 5 - RF/64\n[=]  Inverted.......... No\n[=]  Offset............ 33\n[=]  Seq. terminator... Yes\n[=]  Block0............ 00148080 (auto detect)\n[=]  Downlink mode..... default/fixed bit length\n[=]  Password set...... Yes\n[=]  Password.......... FFFFFFFF\n\n[+] Write OK, validation successful\n[usb|script] pm3 --> lf t55xx write -b 1 -d FF8C6529 --verify\n[=] Writing page 0  block: 01  data: 0xFF8C6529 \n[+] Write OK, validation successful\n[usb|script] pm3 --> lf t55xx write -b 2 -d 8C94A940 --verify\n[=] Writing page 0  block: 02  data: 0x8C94A940 \n[+] Write OK, validation successful\n[usb|script] pm3 --> lf t55xx write -b 3 -d FFD297BE --verify\n[=] Writing page 0  block: 03  data: 0xFFD297BE \n[+] Write OK, validation successful\n[usb|script] pm3 --> lf t55xx write -b 4 -d 31BDF7A0 --verify\n[=] Writing page 0  block: 04  data: 0x31BDF7A0 \n[+] Write OK, validation successful\n[usb|script] pm3 --> lf t55xx detect\n[=]  Chip type......... T55x7\n[=]  Modulation........ ASK\n[=]  Bit rate.......... 5 - RF/64\n[=]  Inverted.......... No\n[=]  Offset............ 33\n[=]  Seq. terminator... Yes\n[=]  Block0............ 00148080 (auto detect)\n[=]  Downlink mode..... default/fixed bit length\n[=]  Password set...... No\n\n[usb|script] pm3 --> lf t55xx dump\n\n[=] ------------------------- T55xx tag memory -----------------------------\n\n[+] Page 0\n[+] blk | hex data | binary                           | ascii\n[+] ----+----------+----------------------------------+-------\n[+]  00 | 00148080 | 00000000000101001000000010000000 | ....\n[+]  01 | FF8C6529 | 11111111100011000110010100101001 | ..e)\n[+]  02 | 8C94A940 | 10001100100101001010100101000000 | ...@\n[+]  03 | FFD297BE | 11111111110100101001011110111110 | ....\n[+]  04 | 31BDF7A0 | 00110001101111011111011110100000 | 1...\n[+]  05 | 00000000 | 00000000000000000000000000000000 | ....\n[+]  06 | 00000000 | 00000000000000000000000000000000 | ....\n[+]  07 | 00000000 | 00000000000000000000000000000000 | ....\n\n[+] Page 1\n[+] blk | hex data | binary                           | ascii\n[+] ----+----------+----------------------------------+-------\n[+]  00 | 00148080 | 00000000000101001000000010000000 | ....\n[+]  01 | <redacted: page-1 factory traceability, unrelated to this test>\n[+]  02 | <redacted: page-1 factory traceability, unrelated to this test>\n[+]  03 | 00000000 | 00000000000000000000000000000000 | ....\n[+] Saved 48 bytes to binary file `/Users/<user>/lf-t55xx-FF8C6529-8C94A940-FFD297BE-31BDF7A0-dump-001.bin`\n[+] Saved to json file /Users/<user>/lf-t55xx-FF8C6529-8C94A940-FFD297BE-31BDF7A0-dump-001.json",
+  "got_name": null,
+  "got_data": null,
+  "status": "NO_READ",
+  "name_matches": false,
+  "fields": {},
+  "want": {},
+  "id_checked": false,
+  "id_ok": null,
+  "id_src": "",
+  "pm3_id": {},
+  "n_attempts": 10,
+  "n_read": 0,
+  "distinct": [],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nReading stopped\r\n\r\n>: "
+ }
+]

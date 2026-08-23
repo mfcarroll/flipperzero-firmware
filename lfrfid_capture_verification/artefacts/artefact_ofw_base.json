@@ -1,0 +1,901 @@
+[
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "em4100",
+  "expect": "EM4100",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf em 410x clone --id 1122334455",
+  "pm3_expect": "EM 410x",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082047.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf em 410x clone --id 1122334455\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf em 410x clone --id 1122334455\n[+] Preparing to clone EM4102 to T55x7 tag with EM Tag ID 1122334455 (RF/64)\n[=] Encoded to FF 8C 65 29 8C 94 A9 40 \n[#] Clock rate: 64\n[#] Tag T55x7 written with 0xff8c65298c94a940\n[+] Done!\n[?] Hint: Try `lf em 410x reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082048.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf em 410x reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] EM 410x ID 1122334455\n[+] EM410x ( RF/64 )\n[=] -------- Possible de-scramble patterns ---------\n[+] Unique TAG ID      : 8844CC22AA\n[=] HoneyWell IdentKey\n[+]     DEZ 8          : 03359829\n[+]     DEZ 10         : 0573785173\n[+]     DEZ 5.5        : 08755.17493\n[+]     DEZ 3.5A       : 017.17493\n[+]     DEZ 3.5B       : 034.17493\n[+]     DEZ 3.5C       : 051.17493\n[+]     DEZ 14/IK2     : 00073588229205\n[+]     DEZ 15/IK3     : 000585269781162\n[+]     DEZ 20/ZK      : 08080404121202021010\n[=] \n[+] Other              : 17493_051_03359829\n[+] Pattern Paxton     : 289899093 [0x11478255]\n[+] Pattern 1          : 5931804 [0x5A831C]\n[+] Pattern Sebury     : 17493 51 3359829  [0x4455 0x33 0x334455]\n[+] VD / ID            : 017 / 0573785173\n[+] Pattern ELECTRA    : 4386 3359829\n[=] ------------------------------------------------\n\n[+] Valid EM410x ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf em 410x reader\n[+] EM 410x ID 1122334455\n",
+  "got_name": "EM4100",
+  "got_data": "1122334455",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "FC": "051"
+  },
+  "want": {
+   "data": "1122334455"
+  },
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(ID=data)+table",
+  "pm3_id": {
+   "ID": "1122334455"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "EM4100 1122334455"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nEM4100 1122334455\r\nFC: 051\nCard: 17493 (RF/64)\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nEM4100 1122334455\r\nFC: 051\nCard: 17493 (RF/64)\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nEM4100 1122334455\r\nFC: 051\nCard: 17493 (RF/64)\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "hid_h10301",
+  "expect": "H10301",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf hid clone -r 2006175c6f",
+  "pm3_expect": "H10301",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082153.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf hid clone -r 2006175c6f\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf hid clone -r 2006175c6f\n[=] Preparing to clone HID tag using raw 2006175C6F\n[+] Done!\n[?] Hint: Try `lf hid reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082154.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf hid reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] [H10301  ] HID H10301 26-bit                FC: 11  CN: 44599  parity ( ok )\n[+] [ind26   ] Indala 26-bit                    FC: 186  CN: 3639  parity ( ok )\n[=] found 2 matching 26-bit formats\n\n[=] Trying with a preamble bit...\n[+] [ind27   ] Indala 27-bit                    FC: 6237  CN: 7279\n[+] [indasc27] Indala ASC 27-bit                FC: 5438  CN: 13989\n[+] [Tecom27 ] Tecom 27-bit                     FC: 1436  CN: 57192\n[=] found 3 matching 27-bit formats\n\n[=] raw: 000000000000002006175c6f\n\n[+] Valid HID Prox ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf hid reader\n[+] [H10301  ] HID H10301 26-bit                FC: 11  CN: 44599  parity ( ok )\n[+] [ind26   ] Indala 26-bit                    FC: 186  CN: 3639  parity ( ok )\n[=] found 2 matching 26-bit formats\n\n[=] Trying with a preamble bit...\n[+] [ind27   ] Indala 27-bit                    FC: 6237  CN: 7279\n[+] [indasc27] Indala ASC 27-bit                FC: 5438  CN: 13989\n[+] [Tecom27 ] Tecom 27-bit                     FC: 1436  CN: 57192\n[=] found 3 matching 27-bit formats\n\n[=] raw: 000000000000002006175c6f\n",
+  "got_name": "H10301",
+  "got_data": "0BAE37",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "FC": "11",
+   "Card": "44599"
+  },
+  "want": {
+   "FC": "11",
+   "Card": "44599"
+  },
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "PM3(Card)+table",
+  "pm3_id": {
+   "Card": "44599"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "H10301 0BAE37"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nH10301 0BAE37\r\nFC: 11\nCard: 44599\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nH10301 0BAE37\r\nFC: 11\nCard: 44599\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nH10301 0BAE37\r\nFC: 11\nCard: 44599\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "ioprox",
+  "expect": "IoProxXSF",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf io clone --vn 1 --fc 101 --cn 1337",
+  "pm3_expect": "IO Prox",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082225.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf io clone --vn 1 --fc 101 --cn 1337\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf io clone --vn 1 --fc 101 --cn 1337\n[+] IO raw bits:\n[+]  0000000001111000010110010110000000110000010110011100110110101111 \n\n[=] Preparing to clone ioProx to T55x7 with Version: 1 FC: 101 (0x65) CN: 1337\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 00147040\n[+]  01 | 00785960\n[+]  02 | 3059CDAF\n[+] Data written and verified\n[+] Done!\n[?] Hint: Try `lf io reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082227.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf io reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] IO Prox - XSF(01)65:01337, Raw: 007859603059cdaf ( ok )\n\n[+] Valid IO Prox ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf io reader\n[+] IO Prox - XSF(01)65:01337, Raw: 007859603059cdaf ( ok )\n",
+  "got_name": "IoProxXSF",
+  "got_data": "65010539",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "FC": "101",
+   "V": "1",
+   "Card": "1337"
+  },
+  "want": {
+   "FC": "101",
+   "Card": "1337"
+  },
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(FC,Card)+table",
+  "pm3_id": {
+   "Raw": "007859603059cdaf"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "IoProxXSF 65010539"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nIoProxXSF 65010539\r\nFC: 101\nV: 1\nCard: 1337\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nIoProxXSF 65010539\r\nFC: 101\nV: 1\nCard: 1337\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nIoProxXSF 65010539\r\nFC: 101\nV: 1\nCard: 1337\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "awid",
+  "expect": "AWID",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf awid clone --fmt 26 --fc 101 --cn 1337",
+  "pm3_expect": "AWID",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082314.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf awid clone --fmt 26 --fc 101 --cn 1337\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf awid clone --fmt 26 --fc 101 --cn 1337\n[=] Preparing to clone AWID 26 to T55x7 with FC: 101 CN: 1337\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 00107060\n[+]  01 | 011D8724\n[+]  02 | 148E2811\n[+]  03 | 11111111\n[+] Data written and verified\n[+] Done!\n[?] Hint: Try `lf awid reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082316.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf awid reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] AWID - len: 26 FC: 101 Card: 1337 - Wiegand: ca0a73, Raw: 011d8724148e281111111111\n\n[+] Valid AWID ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf awid reader\n[+] AWID - len: 26 FC: 101 Card: 1337 - Wiegand: ca0a73, Raw: 011d8724148e281111111111\n",
+  "got_name": "AWID",
+  "got_data": "1A32829CC000000000",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "Format": "26",
+   "FC": "101",
+   "Card": "1337"
+  },
+  "want": {
+   "FC": "101",
+   "Card": "1337"
+  },
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(FC,Card)+table",
+  "pm3_id": {
+   "FC": "101",
+   "Card": "1337",
+   "Raw": "011d8724148e281111111111"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "AWID 1A32829CC000000000"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nAWID 1A32829CC000000000\r\nFormat: 26\nFC: 101\nCard: 1337\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nAWID 1A32829CC000000000\r\nFormat: 26\nFC: 101\nCard: 1337\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nAWID 1A32829CC000000000\r\nFormat: 26\nFC: 101\nCard: 1337\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "viking",
+  "expect": "Viking",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf viking clone --cn 0001A337",
+  "pm3_expect": "Viking",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082351.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf viking clone --cn 0001A337\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf viking clone --cn 0001A337\n[=] Preparing to clone Viking tag on T55x7 - ID 0001A337 raw F2 00 00 00 01 A3 37 CF \n[+] Done!\n[?] Hint: Try `lf viking reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082352.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf viking reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] Viking - Card 0001A337, Raw: F200000001A337CF\n\n[+] Valid Viking ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf viking reader\n[+] Viking - Card 0001A337, Raw: F200000001A337CF\n",
+  "got_name": "Viking",
+  "got_data": "0001A337",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "ID": "0001A337"
+  },
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(Card=ID)",
+  "pm3_id": {
+   "Card": "0001A337",
+   "Raw": "F200000001A337CF"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "Viking 0001A337"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nViking 0001A337\r\nID: 0001A337\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nViking 0001A337\r\nID: 0001A337\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nViking 0001A337\r\nID: 0001A337\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "pac_stanley",
+  "expect": "PAC/Stanley",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf pac clone --cn CD4F5552",
+  "pm3_expect": "PAC/Stanley",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082433.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf pac clone --cn CD4F5552\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf pac clone --cn CD4F5552\n[=] Preparing to clone PAC/Stanley tag to T55x7 with ID CD4F5552 raw FF2049906D8511C593155B56D5B2649F\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 00080080\n[+]  01 | FF204990\n[+]  02 | 6D8511C5\n[+]  03 | 93155B56\n[+]  04 | D5B2649F\n[+] Data written and verified\n[+] Done!\n[?] Hint: Try `lf pac reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082437.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf pac reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] PAC/Stanley - Card: CD4F5552, Raw: FF2049906D8511C593155B56D5B2649F\n\n[+] Valid PAC/Stanley ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf pac reader\n[+] PAC/Stanley - Card: CD4F5552, Raw: FF2049906D8511C593155B56D5B2649F\n",
+  "got_name": "PAC/Stanley",
+  "got_data": "CD4F5552",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "Card": "CD4F5552"
+  },
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(Card)",
+  "pm3_id": {
+   "Card": "CD4F5552",
+   "Raw": "FF2049906D8511C593155B56D5B2649F"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "PAC/Stanley CD4F5552"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nPAC/Stanley CD4F5552\r\nCIN: CD4F5552\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nPAC/Stanley CD4F5552\r\nCIN: CD4F5552\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nPAC/Stanley CD4F5552\r\nCIN: CD4F5552\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "em4100_32",
+  "expect": "EM4100/32",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf em 410x clone --id 1122334455 --clk 32",
+  "pm3_expect": "EM 410x",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082518.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf em 410x clone --id 1122334455 --clk 32\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf em 410x clone --id 1122334455 --clk 32\n[+] Preparing to clone EM4102 to T55x7 tag with EM Tag ID 1122334455 (RF/32)\n[=] Encoded to FF 8C 65 29 8C 94 A9 40 \n[#] Clock rate: 32\n[#] Tag T55x7 written with 0xff8c65298c94a940\n[+] Done!\n[?] Hint: Try `lf em 410x reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082519.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf em 410x reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] EM 410x ID 1122334455\n[+] EM410x ( RF/32 )\n[=] -------- Possible de-scramble patterns ---------\n[+] Unique TAG ID      : 8844CC22AA\n[=] HoneyWell IdentKey\n[+]     DEZ 8          : 03359829\n[+]     DEZ 10         : 0573785173\n[+]     DEZ 5.5        : 08755.17493\n[+]     DEZ 3.5A       : 017.17493\n[+]     DEZ 3.5B       : 034.17493\n[+]     DEZ 3.5C       : 051.17493\n[+]     DEZ 14/IK2     : 00073588229205\n[+]     DEZ 15/IK3     : 000585269781162\n[+]     DEZ 20/ZK      : 08080404121202021010\n[=] \n[+] Other              : 17493_051_03359829\n[+] Pattern Paxton     : 289899093 [0x11478255]\n[+] Pattern 1          : 5931804 [0x5A831C]\n[+] Pattern Sebury     : 17493 51 3359829  [0x4455 0x33 0x334455]\n[+] VD / ID            : 017 / 0573785173\n[+] Pattern ELECTRA    : 4386 3359829\n[=] ------------------------------------------------\n\n[+] Valid EM410x ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf em 410x reader\n[+] EM 410x ID 1122334455\n",
+  "got_name": "EM4100/32",
+  "got_data": "1122334455",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "FC": "051"
+  },
+  "want": {
+   "data": "1122334455"
+  },
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(ID=data)+table",
+  "pm3_id": {
+   "ID": "1122334455"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "EM4100/32 1122334455"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nEM4100/32 1122334455\r\nFC: 051\nCard: 17493 (RF/32)\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nEM4100/32 1122334455\r\nFC: 051\nCard: 17493 (RF/32)\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nEM4100/32 1122334455\r\nFC: 051\nCard: 17493 (RF/32)\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "fdx_b",
+  "expect": "FDX-B",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf fdxb clone --country 999 --national 1337",
+  "pm3_expect": "Animal ID",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082601.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf fdxb clone --country 999 --national 1337\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf fdxb clone --country 999 --national 1337\n[=] Country code........ 999\n[=] National code....... 1337\n[=] Set animal bit...... N\n[=] Set data block bit.. N\n[=] Extended data....... 0x0\n[=] RFU................. 0\n[=] Preparing to clone FDX-B to T55x7 with animal ID: 0999-1337\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 00098080\n[+]  01 | 00339A08\n[+]  02 | 0402079F\n[+]  03 | 80403B75\n[+]  04 | 98040201\n[+] Data written and verified\n[+] Done!\n[?] Hint: Try `lf fdxb reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082604.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf fdxb reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n\n[+] FDX-B / ISO 11784/5 Animal\n[+] Animal ID......... 999-000000001337\n[+] National Code..... 000000001337 ( 0x539 )\n[+] Country Code...... 999 - Test range\n[+] Reserved/RFU...... 0 (0x0000)\n[+] Animal bit set?... False\n[+] Data block?....... False  ( 0x0 )\n[+] RUDI bit?......... False\n[+] User Info?........ 0 ( RFU )\n[+] Replacement No?... 0 ( RFU )\n[+] CRC-16............ 0x9ADB ( ok )\n[+] Raw............... 9C A0 00 00 03 9F 00 00 DB 59 00 00 00 \n\n\n[+] Valid FDX-B ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf fdxb reader\n\n[+] FDX-B / ISO 11784/5 Animal\n[+] Animal ID......... 999-000000001337\n[+] National Code..... 000000001337 ( 0x539 )\n[+] Country Code...... 999 - Test range\n[+] Reserved/RFU...... 0 (0x0000)\n[+] Animal bit set?... False\n[+] Data block?....... False  ( 0x0 )\n[+] RUDI bit?......... False\n[+] User Info?........ 0 ( RFU )\n[+] Replacement No?... 0 ( RFU )\n[+] CRC-16............ 0x9ADB ( ok )\n[+] Raw............... 9C A0 00 00 03 9F 00 00 DB 59 00 00 00 \n\n",
+  "got_name": "FDX-B",
+  "got_data": "9CA00000039F0000000000",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "ID": "999-000000001337",
+   "Country Code": "999",
+   "Country": "Unknown",
+   "Temperature": "---",
+   "Animal": "No",
+   "Visual Start Digit": "0",
+   "Replacement Number": "0",
+   "User Info": "0",
+   "Data Block": "Absent",
+   "RUDI Bit": "No",
+   "RFU": "0"
+  },
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(FC=Country Code)",
+  "pm3_id": {
+   "ID": "999-000000001337"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "FDX-B 9CA00000039F0000000000"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nFDX-B 9CA00000039F0000000000\r\nID: 999-000000001337\nCountry Code: 999\nCountry: Unknown\nTemperature: ---\nAnimal: No\nVisual Start Digit: 0\nReplacement Number: 0\nUser Info: 0\nData Block: Absent\nRUDI Bit: No\nRFU: 0\n\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nFDX-B 9CA00000039F0000000000\r\nID: 999-000000001337\nCountry Code: 999\nCountry: Unknown\nTemperature: ---\nAnimal: No\nVisual Start Digit: 0\nReplacement Number: 0\nUser Info: 0\nData Block: Absent\nRUDI Bit: No\nRFU: 0\n\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nFDX-B 9CA00000039F0000000000\r\nID: 999-000000001337\nCountry Code: 999\nCountry: Unknown\nTemperature: ---\nAnimal: No\nVisual Start Digit: 0\nReplacement Number: 0\nUser Info: 0\nData Block: Absent\nRUDI Bit: No\nRFU: 0\n\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "gproxii",
+  "expect": "GProxII",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf gproxii clone --xor 141 --fmt 26 --fc 123 --cn 1337",
+  "pm3_expect": "G-Prox-II",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082638.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf gproxii clone --xor 141 --fmt 26 --fc 123 --cn 1337\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf gproxii clone --xor 141 --fmt 26 --fc 123 --cn 1337\n[=] Preparing to clone Guardall to T55x7 with fc: 123 cn: 1337 xor: 141\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 00150060\n[+]  01 | FAC2A38C\n[+]  02 | 2B081AF0\n[+]  03 | 210B12C2\n[+] Data written and verified\n[+] Done!\n[?] Hint: Try `lf gproxii reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082641.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf gproxii reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] G-Prox-II - Len: 26 FC: 123 Card: 1337 xor: 141, Raw: fac2a38c2b081af0210b12c2\n\n[+] Valid Guardall G-Prox II ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf gproxii reader\n[+] G-Prox-II - Len: 26 FC: 123 Card: 1337 xor: 141, Raw: fac2a38c2b081af0210b12c2\n",
+  "got_name": "GProxII",
+  "got_data": "FAC2A38C2B081AF0210B12C2",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {},
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "PM3(Raw=data)",
+  "pm3_id": {
+   "FC": "123",
+   "Card": "1337",
+   "Raw": "fac2a38c2b081af0210b12c2"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "GProxII FAC2A38C2B081AF0210B12C2"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nGProxII FAC2A38C2B081AF0210B12C2\r\nFC: 123 Card: 1337 LEN: 26\nXOR: 141 CRC: 0 P: 0100\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nGProxII FAC2A38C2B081AF0210B12C2\r\nFC: 123 Card: 1337 LEN: 26\nXOR: 141 CRC: 0 P: 0100\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nGProxII FAC2A38C2B081AF0210B12C2\r\nFC: 123 Card: 1337 LEN: 26\nXOR: 141 CRC: 0 P: 0100\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "idteck",
+  "expect": "Idteck",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf idteck clone --raw 4944544B351FBE4B",
+  "pm3_expect": "IDTECK",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082721.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf idteck clone --raw 4944544B351FBE4B\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf idteck clone --raw 4944544B351FBE4B\n[=] Preparing to clone Idteck to T55x7 raw 4944544B351FBE4B\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 00081040\n[+]  01 | 4944544B\n[+]  02 | 351FBE4B\n[+] Done!\n[?] Hint: Try `lf idteck reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082723.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf idteck reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] IDTECK Tag Found: Card ID 4963871 ( 0x4BBE1F ) Raw: 4944544B351FBE4B  chksum 0x35 ( fail )\n[+] [H10301  ] HID H10301 26-bit                FC: 37  CN: 57103  parity ( ok )\n\n[+] Valid Idteck ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf idteck reader\n[+] IDTECK Tag Found: Card ID 4963871 ( 0x4BBE1F ) Raw: 4944544B351FBE4B  chksum 0x35 ( fail )\n[+] [H10301  ] HID H10301 26-bit                FC: 37  CN: 57103  parity ( ok )\n",
+  "got_name": "Idteck",
+  "got_data": "4944544B351FBE4B",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "FC": "4944544B",
+   "Card": "351FBE4B"
+  },
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(raw)",
+  "pm3_id": {
+   "ID": "4963871",
+   "Raw": "4944544B351FBE4B"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "Idteck 4944544B351FBE4B"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nIdteck 4944544B351FBE4B\r\nFC: 4944544B\nCard: 351FBE4B\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nIdteck 4944544B351FBE4B\r\nFC: 4944544B\nCard: 351FBE4B\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nIdteck 4944544B351FBE4B\r\nFC: 4944544B\nCard: 351FBE4B\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "noralsy",
+  "expect": "Noralsy",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf noralsy clone --cn 112233",
+  "pm3_expect": "Noralsy",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082814.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf noralsy clone --cn 112233\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf noralsy clone --cn 112233\n[=] Preparing to clone Noralsy to T55x7 with Card id: 112233\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 00088068\n[+]  01 | BB0214FF\n[+]  02 | 01100022\n[+]  03 | 33070000\n[+] Data written and verified\n[+] Done!\n[?] Hint: Try `lf noralsy reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082817.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf noralsy reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] Noralsy - Card: 112233, Year: 2000, Raw: BB0214FF0110002233070000\n\n[+] Valid Noralsy ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf noralsy reader\n[+] Noralsy - Card: 112233, Year: 2000, Raw: BB0214FF0110002233070000\n",
+  "got_name": "Noralsy",
+  "got_data": "BB0214FF0110002233070000",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "Card": "0112233",
+   "Year": "2000"
+  },
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(Card)",
+  "pm3_id": {
+   "Card": "112233",
+   "Raw": "BB0214FF0110002233070000"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "Noralsy BB0214FF0110002233070000"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nNoralsy BB0214FF0110002233070000\r\nCard ID: 0112233\nYear: 2000\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nNoralsy BB0214FF0110002233070000\r\nCard ID: 0112233\nYear: 2000\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nNoralsy BB0214FF0110002233070000\r\nCard ID: 0112233\nYear: 2000\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "paradox",
+  "expect": "Paradox",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf paradox clone --fc 96 --cn 40426",
+  "pm3_expect": "Paradox",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082912.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf paradox clone --fc 96 --cn 40426\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf paradox clone --fc 96 --cn 40426\n[=] Preparing to clone Paradox to T55x7 with raw hex\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 00107060\n[+]  01 | 0F555556\n[+]  02 | 95596A6A\n[+]  03 | 9999A59A\n[+] Data written and verified\n[+] Done!\n[?] Hint: Try `lf paradox read` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822082914.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf paradox read\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[=] Paradox - ID: 004209dea FC: 96 Card: 40426, Checksum: b2, Raw: 0f55555695596a6a9999a59a\n\n[+] Valid Paradox ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf paradox read\n[=] Paradox - ID: 004209dea FC: 96 Card: 40426, Checksum: b2, Raw: 0f55555695596a6a9999a59a\n",
+  "got_name": "Paradox",
+  "got_data": "0018277AACB0",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "FC": "96",
+   "Card": "40426",
+   "CRC": "178",
+   "Calc CRC": "178"
+  },
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(FC,Card)",
+  "pm3_id": {},
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "Paradox 0018277AACB0"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nParadox 0018277AACB0\r\nFC: 96\nCard: 40426\nCRC: 178\nCalc CRC: 178\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nParadox 0018277AACB0\r\nFC: 96\nCard: 40426\nCRC: 178\nCalc CRC: 178\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nParadox 0018277AACB0\r\nFC: 96\nCard: 40426\nCRC: 178\nCalc CRC: 178\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "nexwatch",
+  "expect": "Nexwatch",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf nexwatch clone --raw 5600000000213C9F8F150C00",
+  "pm3_expect": "NexWatch",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083007.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf nexwatch clone --raw 5600000000213C9F8F150C00\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf nexwatch clone --raw 5600000000213C9F8F150C00\n[=] Magic byte selected... 0xBE\n[=] Preparing to clone NexWatch to T55x7 raw 5600000000213C9F8F150C00\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 00081060\n[+]  01 | 56000000\n[+]  02 | 00213C9F\n[+]  03 | 8F150C00\n[+] Done!\n[?] Hint: Try `lf nexwatch reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083010.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf nexwatch reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+]  NexWatch raw id : 0x40c00080\n[+]      fingerprint : Quadrakey\n[+]         88bit id : 521512301 (0x1f15a56d)\n[+]             mode : 1\n[=]  Raw : 5600000000213C9F8F150C00\n\n[+] Valid NexWatch ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf nexwatch reader\n[+]  NexWatch raw id : 0x40c00080\n[+]      fingerprint : Quadrakey\n[+]         88bit id : 521512301 (0x1f15a56d)\n[+]             mode : 1\n[=]  Raw : 5600000000213C9F8F150C00\n",
+  "got_name": "Nexwatch",
+  "got_data": "00213C9F8F150C00",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "ID": "521512301",
+   "Mode": "1",
+   "Type": "Quadrakey"
+  },
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(raw~)",
+  "pm3_id": {},
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "Nexwatch 00213C9F8F150C00"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nNexwatch 00213C9F8F150C00\r\nID: 521512301\nMode: 1\nType: Quadrakey\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nNexwatch 00213C9F8F150C00\r\nID: 521512301\nMode: 1\nType: Quadrakey\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nNexwatch 00213C9F8F150C00\r\nID: 521512301\nMode: 1\nType: Quadrakey\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "pyramid",
+  "expect": "Pyramid",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf pyramid clone --fc 123 --cn 11223",
+  "pm3_expect": "Pyramid",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083106.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf pyramid clone --fc 123 --cn 11223\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf pyramid clone --fc 123 --cn 11223\n[=] Preparing to clone Farpointe/Pyramid to T55x7 from specified data.\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 00107080\n[+]  01 | 00010101\n[+]  02 | 01010101\n[+]  03 | 0101016E\n[+]  04 | B35E5DA4\n[+] Data written and verified\n[+] Done!\n[?] Hint: Try `lf pyramid reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083109.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf pyramid reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] Pyramid - len: 26, FC: 123 Card: 11223 - Wiegand: 2f657ae, Raw: 00010101010101010101016eb35e5da4\n\n[+] Valid Pyramid ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf pyramid reader\n[+] Pyramid - len: 26, FC: 123 Card: 11223 - Wiegand: 2f657ae, Raw: 00010101010101010101016eb35e5da4\n",
+  "got_name": "Pyramid",
+  "got_data": "1A7B2BD7",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "Format": "26",
+   "FC": "123",
+   "Card": "11223"
+  },
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(FC,Card)",
+  "pm3_id": {
+   "FC": "123",
+   "Card": "11223",
+   "Raw": "00010101010101010101016eb35e5da4"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "Pyramid 1A7B2BD7"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nPyramid 1A7B2BD7\r\nFormat: 26\nFC: 123; Card: 11223\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nPyramid 1A7B2BD7\r\nFormat: 26\nFC: 123; Card: 11223\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nPyramid 1A7B2BD7\r\nFormat: 26\nFC: 123; Card: 11223\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "jablotron",
+  "expect": "Jablotron",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf jablotron clone --cn 01b669",
+  "pm3_expect": "Jablotron",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083152.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf jablotron clone --cn 01b669\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf jablotron clone --cn 01b669\n[=] Preparing to clone Jablotron to T55x7 with FullCode: 1b669  id: 54a5\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 00158040\n[+]  01 | FFFF0000\n[+]  02 | 01B6691A\n[+] Data written and verified\n[+] Done!\n[?] Hint: Try `lf jablotron reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083154.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf jablotron reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] Jablotron - Card: 54a5, Raw: FFFF000001B6691A\n[+] Printed: 1410-00-0002-1669\n\n[+] Valid Jablotron ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf jablotron reader\n[+] Jablotron - Card: 54a5, Raw: FFFF000001B6691A\n[+] Printed: 1410-00-0002-1669\n",
+  "got_name": "Jablotron",
+  "got_data": "000001B669",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "Card": "54A5"
+  },
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(Card=data)",
+  "pm3_id": {
+   "Card": "54a5",
+   "Raw": "FFFF000001B6691A"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "Jablotron 000001B669"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nJablotron 000001B669\r\nCard: 54A5\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nJablotron 000001B669\r\nCard: 54A5\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nJablotron 000001B669\r\nCard: 54A5\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "securakey",
+  "expect": "Radio Key",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf securakey clone --raw 7FCB400001ADEA5344300000",
+  "pm3_expect": "Securakey",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083235.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf securakey clone --raw 7FCB400001ADEA5344300000\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf securakey clone --raw 7FCB400001ADEA5344300000\n[=] Preparing to clone Securakey to T55x7  with raw hex\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 000C8060\n[+]  01 | 7FCB4000\n[+]  02 | 01ADEA53\n[+]  03 | 44300000\n[+] Data written and verified\n[+] Done!\n[?] Hint: Try `lf securakey reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083238.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf securakey reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] Securakey - len: 26 FC: 0x35 Card: 64169, Raw: 7FCB400001ADEA5344300000\n[+] Wiegand: 006BF553 parity ( ok )\n\n[=] How the FC translates to printed FC is unknown\n\n[=] How the checksum is calculated is unknown\n[=] Help the community identify this format further\n[=] by sharing your tag on the pm3 forum or discord\n\n\n[+] Valid Securakey ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf securakey reader\n[+] Securakey - len: 26 FC: 0x35 Card: 64169, Raw: 7FCB400001ADEA5344300000\n[+] Wiegand: 006BF553 parity ( ok )\n\n[=] How the FC translates to printed FC is unknown\n\n[=] How the checksum is calculated is unknown\n[=] Help the community identify this format further\n[=] by sharing your tag on the pm3 forum or discord\n\n",
+  "got_name": "Radio Key",
+  "got_data": "0035FAA988C0",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "FC": "53",
+   "Card": "64169"
+  },
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "PM3(FC,Card)",
+  "pm3_id": {
+   "FC": "0x35",
+   "Card": "64169",
+   "Raw": "7FCB400001ADEA5344300000"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "Radio Key 0035FAA988C0"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nRadio Key 0035FAA988C0\r\nRKKT 26-bit format\nFacility code: 53\nCard number: 64169\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nRadio Key 0035FAA988C0\r\nRKKT 26-bit format\nFacility code: 53\nCard number: 64169\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nRadio Key 0035FAA988C0\r\nRKKT 26-bit format\nFacility code: 53\nCard number: 64169\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "gallagher",
+  "expect": "Gallagher",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf gallagher clone --rc 0 --fc 9876 --cn 1234 --il 1",
+  "pm3_expect": "GALLAGHER",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083319.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf gallagher clone --rc 0 --fc 9876 --cn 1234 --il 1\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf gallagher clone --rc 0 --fc 9876 --cn 1234 --il 1\n[=] Preparing to clone Gallagher to T55x7 from specified data.\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 00088060\n[+]  01 | 7FEAA34B\n[+]  02 | A4CB5A34\n[+]  03 | 068C922B\n[+] Data written and verified\n[+] Done!\n[?] Hint: Try `lf gallagher reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083321.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf gallagher reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] GALLAGHER - Region: 0 Facility: 9876 Card No.: 1234 Issue Level: 1\n[+]    Displayed: A9876\n[+]    Raw: 7FEAA34BA4CB5A34068C922B\n[+]    CRC: 2B - 2B (ok)\n\n[+] Valid GALLAGHER ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf gallagher reader\n[+] GALLAGHER - Region: 0 Facility: 9876 Card No.: 1234 Issue Level: 1\n[+]    Displayed: A9876\n[+]    Raw: 7FEAA34BA4CB5A34068C922B\n[+]    CRC: 2B - 2B (ok)\n",
+  "got_name": "Gallagher",
+  "got_data": "01002694000004D2",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "FC": "9876",
+   "Card": "1234",
+   "Region": "0",
+   "Issue Level": "1"
+  },
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(FC,Card)",
+  "pm3_id": {
+   "Raw": "7FEAA34BA4CB5A34068C922B"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "Gallagher 01002694000004D2"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nGallagher 01002694000004D2\r\nFC: 9876\nCard: 1234\nRegion: 0\nIssue Level: 1\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nGallagher 01002694000004D2\r\nFC: 9876\nCard: 1234\nRegion: 0\nIssue Level: 1\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nGallagher 01002694000004D2\r\nFC: 9876\nCard: 1234\nRegion: 0\nIssue Level: 1\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "fdx_a",
+  "expect": "FDX-A",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf destron clone --uid 1A2B3C4D5E",
+  "pm3_expect": "FDX-A FECAVA Destron",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083408.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf destron clone --uid 1A2B3C4D5E\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf destron clone --uid 1A2B3C4D5E\n[=] Preparing to clone Destron tag to T55x7 with ID: 1A2B3C4D5E\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 00105060\n[+]  01 | AAE2A966\n[+]  02 | 6665655A\n[+]  03 | 5A599956\n[+] Data written and verified\n[+] Done!\n[?] Hint: Try `lf destron reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083411.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf destron reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] FDX-A FECAVA Destron: 1A2B3C4D5E\n\n[+] Valid FDX-A FECAVA Destron ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf destron reader\n[+] FDX-A FECAVA Destron: 1A2B3C4D5E\n",
+  "got_name": "FDX-A",
+  "got_data": "1AABBCCD5E",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "ID": "1A2B3C4D5E",
+   "Parity": "+"
+  },
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(ID)",
+  "pm3_id": {},
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "FDX-A 1AABBCCD5E"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nFDX-A 1AABBCCD5E\r\nID: 1A2B3C4D5E\nParity: +\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nFDX-A 1AABBCCD5E\r\nID: 1A2B3C4D5E\nParity: +\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nFDX-A 1AABBCCD5E\r\nID: 1A2B3C4D5E\nParity: +\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "hid_generic",
+  "expect": "HIDProx",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf hid clone -r 2e0ec00c87",
+  "pm3_expect": "C1k35s",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083449.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf hid clone -r 2e0ec00c87\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf hid clone -r 2e0ec00c87\n[=] Preparing to clone HID tag using raw 2E0EC00C87\n[+] Done!\n[?] Hint: Try `lf hid reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083450.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf hid reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] [C1k35s  ] HID Corporate 1000 35-bit std    FC: 118  CN: 1603  parity ( ok )\n[=] found 1 matching 35-bit format\n\n[=] Trying with a preamble bit...\n[+] [C15001  ] HID KeyScan 36-bit               FC: 96  CN: 1603  OEM: 775  parity ( fail )\n[+] [S12906  ] HID Simplex 36-bit               FC: 193  CN: 6293059  Issue: 3  parity ( fail )\n[+] [Sie36   ] HID 36-bit Siemens               FC: 198496  CN: 1603  parity ( fail )\n[=] found 3 matching 36-bit formats\n[-] Parity tests failed\n\n[=] raw: 000000000000002e0ec00c87\n\n[+] Valid HID Prox ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf hid reader\n[+] [C1k35s  ] HID Corporate 1000 35-bit std    FC: 118  CN: 1603  parity ( ok )\n[=] found 1 matching 35-bit format\n\n[=] Trying with a preamble bit...\n[+] [C15001  ] HID KeyScan 36-bit               FC: 96  CN: 1603  OEM: 775  parity ( fail )\n[+] [S12906  ] HID Simplex 36-bit               FC: 193  CN: 6293059  Issue: 3  parity ( fail )\n[+] [Sie36   ] HID 36-bit Siemens               FC: 198496  CN: 1603  parity ( fail )\n[=] found 3 matching 36-bit formats\n[-] Parity tests failed\n\n[=] raw: 000000000000002e0ec00c87\n",
+  "got_name": "HIDProx",
+  "got_data": "02E0EC00C870",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "Data": "61D80190E"
+  },
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(raw~)",
+  "pm3_id": {
+   "FC": "118",
+   "Card": "1603"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "HIDProx 02E0EC00C870"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nHIDProx 02E0EC00C870\r\n35-bit HID Proximity\nData: 61D80190E\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nHIDProx 02E0EC00C870\r\n35-bit HID Proximity\nData: 61D80190E\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nHIDProx 02E0EC00C870\r\n35-bit HID Proximity\nData: 61D80190E\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "electra",
+  "expect": "Electra",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "T55XX:00148080,FFD14AA6,0C6C515E,5AC33C3C,3C3C3C3C",
+  "pm3_expect": "",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083536.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf t55xx write -b 0 -d 00148080 --verify ; lf t55xx write -b 1 -d FFD14AA6 --verify ; lf t55xx write -b 2 -d 0C6C515E --verify ; lf t55xx write -b 3 -d 5AC33C3C --verify ; lf t55xx write -b 4 -d 3C3C3C3C --verify ; lf t55xx detect ; lf t55xx dump\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf t55xx write -b 0 -d 00148080 --verify\n[=] Writing page 0  block: 00  data: 0x00148080 \n[=] Block0 write detected, running `detect` to see if validation is possible\n[=]  Chip type......... T55x7\n[=]  Modulation........ ASK\n[=]  Bit rate.......... 5 - RF/64\n[=]  Inverted.......... No\n[=]  Offset............ 33\n[=]  Seq. terminator... Yes\n[=]  Block0............ 00148080 (auto detect)\n[=]  Downlink mode..... default/fixed bit length\n[=]  Password set...... Yes\n[=]  Password.......... FFFFFFFF\n\n[+] Write OK, validation successful\n[usb|script] pm3 --> lf t55xx write -b 1 -d FFD14AA6 --verify\n[=] Writing page 0  block: 01  data: 0xFFD14AA6 \n[+] Write OK, validation successful\n[usb|script] pm3 --> lf t55xx write -b 2 -d 0C6C515E --verify\n[=] Writing page 0  block: 02  data: 0x0C6C515E \n[+] Write OK, validation successful\n[usb|script] pm3 --> lf t55xx write -b 3 -d 5AC33C3C --verify\n[=] Writing page 0  block: 03  data: 0x5AC33C3C \n[+] Write OK, validation successful\n[usb|script] pm3 --> lf t55xx write -b 4 -d 3C3C3C3C --verify\n[=] Writing page 0  block: 04  data: 0x3C3C3C3C \n[+] Write OK, validation successful\n[usb|script] pm3 --> lf t55xx detect\n[=]  Chip type......... T55x7\n[=]  Modulation........ ASK\n[=]  Bit rate.......... 5 - RF/64\n[=]  Inverted.......... No\n[=]  Offset............ 33\n[=]  Seq. terminator... Yes\n[=]  Block0............ 00148080 (auto detect)\n[=]  Downlink mode..... default/fixed bit length\n[=]  Password set...... No\n\n[usb|script] pm3 --> lf t55xx dump\n\n[=] ------------------------- T55xx tag memory -----------------------------\n\n[+] Page 0\n[+] blk | hex data | binary                           | ascii\n[+] ----+----------+----------------------------------+-------\n[+]  00 | 00148080 | 00000000000101001000000010000000 | ....\n[+]  01 | FFD14AA6 | 11111111110100010100101010100110 | ..J.\n[+]  02 | 0C6C515E | 00001100011011000101000101011110 | .lQ^\n[+]  03 | 5AC33C3C | 01011010110000110011110000111100 | Z.<<\n[+]  04 | 3C3C3C3C | 00111100001111000011110000111100 | <<<<\n[+]  05 | B3C6AD1F | 10110011110001101010110100011111 | ....\n[+]  06 | CF649393 | 11001111011001001001001110010011 | .d..\n[+]  07 | 928C14E5 | 10010010100011000001010011100101 | ....\n\n[+] Page 1\n[+] blk | hex data | binary                           | ascii\n[+] ----+----------+----------------------------------+-------\n[+]  00 | 00148080 | 00000000000101001000000010000000 | ....\n[+]  01 | <redacted: page-1 factory traceability, unrelated to this test>\n[+]  02 | <redacted: page-1 factory traceability, unrelated to this test>\n[+]  03 | 00000000 | 00000000000000000000000000000000 | ....\n[+] Saved 48 bytes to binary file `/Users/<user>/lf-t55xx-FFD14AA6-0C6C515E-5AC33C3C-3C3C3C3C-B3C6AD1F-CF649393-928C14E5-dump-004.bin`\n[+] Saved to json file /Users/<user>/lf-t55xx-FFD14AA6-0C6C515E-5AC33C3C-3C3C3C3C-B3C6AD1F-CF649393-928C14E5-dump-004.json",
+  "got_name": "Electra",
+  "got_data": "A55AC33CA55AC33C",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "Epilogue": "5AC33C3C3C3C3C3C"
+  },
+  "want": {
+   "data": "A55AC33CA55AC33C"
+  },
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "table",
+  "pm3_id": {},
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "Electra A55AC33CA55AC33C"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nElectra A55AC33CA55AC33C\r\nEpilogue: 5AC33C3C3C3C3C3C\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nElectra A55AC33CA55AC33C\r\nEpilogue: 5AC33C3C3C3C3C3C\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nElectra A55AC33CA55AC33C\r\nEpilogue: 5AC33C3C3C3C3C3C\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "hid_ex_generic",
+  "expect": "HIDExt",
+  "silicon": "sc-copper",
+  "position": "6mm",
+  "gap_window": "6mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "T55XX:001070C0,1D996666,99A55A5A,A5966969,965AA5A5,5A996666,99699696",
+  "pm3_expect": "",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083621.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf t55xx write -b 0 -d 001070C0 --verify ; lf t55xx write -b 1 -d 1D996666 --verify ; lf t55xx write -b 2 -d 99A55A5A --verify ; lf t55xx write -b 3 -d A5966969 --verify ; lf t55xx write -b 4 -d 965AA5A5 --verify ; lf t55xx write -b 5 -d 5A996666 --verify ; lf t55xx write -b 6 -d 99699696 --verify ; lf t55xx detect ; lf t55xx dump\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf t55xx write -b 0 -d 001070C0 --verify\n[=] Writing page 0  block: 00  data: 0x001070C0 \n[!] Write could not validate the written data\n[usb|script] pm3 --> lf t55xx write -b 1 -d 1D996666 --verify\n[=] Writing page 0  block: 01  data: 0x1D996666 \n[!] Write could not validate the written data\n[usb|script] pm3 --> lf t55xx write -b 2 -d 99A55A5A --verify\n[=] Writing page 0  block: 02  data: 0x99A55A5A \n[!] Write could not validate the written data\n[usb|script] pm3 --> lf t55xx write -b 3 -d A5966969 --verify\n[=] Writing page 0  block: 03  data: 0xA5966969 \n[!] Write could not validate the written data\n[usb|script] pm3 --> lf t55xx write -b 4 -d 965AA5A5 --verify\n[=] Writing page 0  block: 04  data: 0x965AA5A5 \n[!] Write could not validate the written data\n[usb|script] pm3 --> lf t55xx write -b 5 -d 5A996666 --verify\n[=] Writing page 0  block: 05  data: 0x5A996666 \n[!] Write could not validate the written data\n[usb|script] pm3 --> lf t55xx write -b 6 -d 99699696 --verify\n[=] Writing page 0  block: 06  data: 0x99699696 \n[!] Write could not validate the written data\n[usb|script] pm3 --> lf t55xx detect\n[=]  Chip type......... T55x7\n[=]  Modulation........ FSK2a\n[=]  Bit rate.......... 4 - RF/50\n[=]  Inverted.......... Yes\n[=]  Offset............ 33\n[=]  Seq. terminator... No\n[=]  Block0............ 001070C0 (auto detect)\n[=]  Downlink mode..... default/fixed bit length\n[=]  Password set...... No\n\n[usb|script] pm3 --> lf t55xx dump\n\n[=] ------------------------- T55xx tag memory -----------------------------\n\n[+] Page 0\n[+] blk | hex data | binary                           | ascii\n[+] ----+----------+----------------------------------+-------\n[+]  00 | 001070C0 | 00000000000100000111000011000000 | ..p.\n[+]  01 | 1D996666 | 00011101100110010110011001100110 | ..ff\n[+]  02 | 99A55A5A | 10011001101001010101101001011010 | ..ZZ\n[+]  03 | A5966969 | 10100101100101100110100101101001 | ..ii\n[+]  04 | 965AA5A5 | 10010110010110101010010110100101 | .Z..\n[+]  05 | 5A996666 | 01011010100110010110011001100110 | Z.ff\n[+]  06 | 99699696 | 10011001011010011001011010010110 | .i..\n[+]  07 | 928C14E5 | 10010010100011000001010011100101 | ....\n\n[+] Page 1\n[+] blk | hex data | binary                           | ascii\n[+] ----+----------+----------------------------------+-------\n[+]  00 | 001070C0 | 00000000000100000111000011000000 | ..p.\n[+]  01 | <redacted: page-1 factory traceability, unrelated to this test>\n[+]  02 | <redacted: page-1 factory traceability, unrelated to this test>\n[+]  03 | 00000000 | 00000000000000000000000000000000 | ....\n[+] Saved 48 bytes to binary file `/Users/<user>/lf-t55xx-1D996666-99A55A5A-A5966969-965AA5A5-5A996666-99699696-928C14E5-dump.bin`\n[+] Saved to json file /Users/<user>/lf-t55xx-1D996666-99A55A5A-A5966969-965AA5A5-5A996666-99699696-928C14E5-dump.json",
+  "got_name": "HIDExt",
+  "got_data": "A55AC33C96693CC3A55A6990",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "Data": "Unknown"
+  },
+  "want": {
+   "data": "A55AC33C96693CC3A55A6990"
+  },
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "table",
+  "pm3_id": {},
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "HIDExt A55AC33C96693CC3A55A6990"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nHIDExt A55AC33C96693CC3A55A6990\r\nType: Generic HID Extended\nData: Unknown\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nHIDExt A55AC33C96693CC3A55A6990\r\nType: Generic HID Extended\nData: Unknown\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nHIDExt A55AC33C96693CC3A55A6990\r\nType: Generic HID Extended\nData: Unknown\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "keri",
+  "expect": "Keri",
+  "silicon": "sc-copper",
+  "position": "3mm",
+  "gap_window": "3mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf keri clone -t i --cn 12345",
+  "pm3_expect": "KERI",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083712.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf keri clone -t i --cn 12345\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf keri clone -t i --cn 12345\n[=] Preparing to clone KERI to T55x7 with Internal Id 80003039\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 603E1040\n[+]  01 | 00000004\n[+]  02 | 000181CF\n[+] Done!\n[?] Hint: Try `lf keri read` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083714.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf keri read\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] KERI - Internal ID: 12345, Raw: E000000080003039\n[+] Descrambled MS - FC: 1 Card: 12544\n\n[+] Valid KERI ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf keri read\n[+] KERI - Internal ID: 12345, Raw: E000000080003039\n[+] Descrambled MS - FC: 1 Card: 12544\n",
+  "got_name": "Keri",
+  "got_data": "80003039",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "ID": "12345",
+   "FC": "1",
+   "Card": "12544"
+  },
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(Card=ID)",
+  "pm3_id": {
+   "ID": "12345",
+   "Raw": "E000000080003039"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "Keri 80003039"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nKeri 80003039\r\nInternal ID: 12345\nFC: 1\nCard: 12544\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nKeri 80003039\r\nInternal ID: 12345\nFC: 1\nCard: 12544\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nKeri 80003039\r\nInternal ID: 12345\nFC: 1\nCard: 12544\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "indala26",
+  "expect": "Indala26",
+  "silicon": "sc-copper",
+  "position": "3mm",
+  "gap_window": "3mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf indala clone --heden 888",
+  "pm3_expect": "Indala",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083810.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf indala clone --heden 888\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf indala clone --heden 888\n[=] Heden-2L card number 888\n[=] Preparing to clone Indala 64 bit to T55x7 raw A0000000A8922953\n[+] Blk | Data \n[+] ----+------------\n[+]  00 | 00081040\n[+]  01 | A0000000\n[+]  02 | A8922953\n[+] Done!\n[?] Hint: Try `lf indala reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083814.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf indala reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] Indala (len 64)  Raw: a0000000a8922953\n[+] Fmt 26 FC: 128 Card: 15494 Parity: 10\n[=] \n[+] Possible de-scramble patterns\n[+]   Printed....... __1042__  ( 0x412 )\n[+]   Internal ID... 680667475\n[+]   Heden-2L...... 888\n\n\n[+] Valid Indala ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf indala reader\n[+] Indala (len 64)  Raw: a0000000a8922953\n[+] Fmt 26 FC: 128 Card: 15494 Parity: 10\n[=] \n[+] Possible de-scramble patterns\n[+]   Printed....... __1042__  ( 0x412 )\n[+]   Internal ID... 680667475\n[+]   Heden-2L...... 888\n\n",
+  "got_name": "Indala26",
+  "got_data": "512452B8",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "FC": "128",
+   "Card": "15494",
+   "Parity": "+",
+   "Checksum": "-"
+  },
+  "want": {},
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "PM3(FC,Card)",
+  "pm3_id": {
+   "Raw": "a0000000a8922953",
+   "FC": "128",
+   "Card": "15494",
+   "ID": "680667475"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "Indala26 512452B8"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nIndala26 512452B8\r\nFC: 128\nCard: 15494\nParity: +\nChecksum: -\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nIndala26 512452B8\r\nFC: 128\nCard: 15494\nParity: +\nChecksum: -\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nIndala26 512452B8\r\nFC: 128\nCard: 15494\nParity: +\nChecksum: -\r\nReading stopped\r\n\r\n>: "
+ },
+ {
+  "build": "ofw-baseline",
+  "firmware_commit": "a55e3939",
+  "label": "em4100_16",
+  "expect": "EM4100/16",
+  "silicon": "sc-copper",
+  "position": "9mm",
+  "gap_window": "9mm",
+  "attempts_cfg": 10,
+  "suite_rev": 39,
+  "pm3_clone": "lf em 410x clone --id 1122334455 --clk 16",
+  "pm3_expect": "EM 410x",
+  "pm3_verified": true,
+  "pm3_out": "[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083903.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf em 410x clone --id 1122334455 --clk 16\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf em 410x clone --id 1122334455 --clk 16\n[+] Preparing to clone EM4102 to T55x7 tag with EM Tag ID 1122334455 (RF/16)\n[=] Encoded to FF 8C 65 29 8C 94 A9 40 \n[#] Clock rate: 16\n[#] Tag T55x7 written with 0xff8c65298c94a940\n[+] Done!\n[?] Hint: Try `lf em 410x reader` to verify\n\n[=] Session log /Users/<user>/.proxmark3/logs/log_20260822083905.txt\n[+] loaded `/Users/<user>/.proxmark3/preferences.json`\n[+] execute command from commandline: lf search ; lf em 410x reader\n\n[+] Using UART port /dev/tty.usbmodem1101\n[+] Communicating with PM3 over USB-CDC\n[usb|script] pm3 --> lf search\n\n[=] Note: False Positives ARE possible\n[=] \n[=] Checking for known tags...\n[=] \n[+] EM 410x ID 1122334455\n[+] EM410x ( RF/16 )\n[=] -------- Possible de-scramble patterns ---------\n[+] Unique TAG ID      : 8844CC22AA\n[=] HoneyWell IdentKey\n[+]     DEZ 8          : 03359829\n[+]     DEZ 10         : 0573785173\n[+]     DEZ 5.5        : 08755.17493\n[+]     DEZ 3.5A       : 017.17493\n[+]     DEZ 3.5B       : 034.17493\n[+]     DEZ 3.5C       : 051.17493\n[+]     DEZ 14/IK2     : 00073588229205\n[+]     DEZ 15/IK3     : 000585269781162\n[+]     DEZ 20/ZK      : 08080404121202021010\n[=] \n[+] Other              : 17493_051_03359829\n[+] Pattern Paxton     : 289899093 [0x11478255]\n[+] Pattern 1          : 5931804 [0x5A831C]\n[+] Pattern Sebury     : 17493 51 3359829  [0x4455 0x33 0x334455]\n[+] VD / ID            : 017 / 0573785173\n[+] Pattern ELECTRA    : 4386 3359829\n[=] ------------------------------------------------\n\n[+] Valid EM410x ID found!\n\n[=] Searching for auth LF and special cases...\n[+] Chipset... T55xx\n[?] Hint: Try `lf t55xx` commands\n[usb|script] pm3 --> lf em 410x reader\n[+] EM 410x ID 1122334455\n",
+  "got_name": "EM4100/16",
+  "got_data": "1122334455",
+  "status": "READ",
+  "name_matches": true,
+  "fields": {
+   "FC": "051"
+  },
+  "want": {
+   "data": "1122334455"
+  },
+  "id_checked": true,
+  "id_ok": true,
+  "id_src": "clone(ID=data)+table",
+  "pm3_id": {
+   "ID": "1122334455"
+  },
+  "n_attempts": 3,
+  "n_read": 3,
+  "distinct": [
+   "EM4100/16 1122334455"
+  ],
+  "raw": "rfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nEM4100/16 1122334455\r\nFC: 051\nCard: 17493 (RF/16)\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nEM4100/16 1122334455\r\nFC: 051\nCard: 17493 (RF/16)\r\nReading stopped\r\n\r\n>: \n---attempt---\nrfid read\r\nReading RFID...\r\nPress Ctrl+C to abort\r\nEM4100/16 1122334455\r\nFC: 051\nCard: 17493 (RF/16)\r\nReading stopped\r\n\r\n>: "
+ }
+]
