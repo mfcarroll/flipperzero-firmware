@@ -36,6 +36,34 @@ Run 1 is the 40-capture run quoted in the PR. Run 2 is an independent replicatio
 note its LOW control lands at **−0.041 µs**, the opposite sign to run 1's +0.087. A real effect cannot
 change sign, which is what retires that residual as noise.
 
+### Why this is differential, and not a comparison against the nominal
+
+The obvious simpler design is to skip the second build entirely: the carrier divides `SystemCoreClock`
+with no remainder at 125 kHz (`64e6/125e3 = 512`), so a carrier cycle is 8.000 µs and an RF/N half-bit is
+`N*4` µs *exactly*. A field-clocked tag should therefore emit periods at exact multiples of that, and `L`
+would just be the shortfall — one build, no differencing.
+
+**It does not work, and the reason is worth recording.** Reducing the committed runs that way puts the
+patched build — where `L` should read ~0 — at **2.44 µs**, and the per-cluster residuals there are
+−0.641, +0.791 and +1.069 µs against nominals of 512, 768 and 1024 µs. That ~1 µs of scatter is analogue:
+where the envelope crosses the comparator threshold depends on the shape of that particular edge, and a
+period's high and low halves are composed differently at different run lengths. **It is comparable in
+size to `L` itself (~1.8 µs), so it cannot be averaged away against a nominal — only cancelled.**
+Differencing two builds cancels it exactly, which is what this harness does and why it needs both.
+
+⚠ It is also a trap with a tidy-looking exit. Fitting `measured = k·q − L` across clusters at k = 2, 3, 4
+returns a quantum of 256.86 µs against an exact 256.00 — a clean number, stable across all three runs,
+and entirely an artefact: a lever arm of only Δk = 2 turns that 1.7 µs of scatter into 0.855 µs per k,
+which is 0.334% on a 256 µs base, exactly the "scale error" it appears to show. The residuals refute it
+in two lines — they are neither equal (so not an offset) nor proportional to k (residual/k *flips sign*
+between k = 2 and k = 3, which a scale error cannot do). **A fitted parameter always returns a value; its
+tidiness is not evidence the thing it names exists.**
+
+⭐ **The differential arm also carries a control the absolute one cannot.** Because `L` is a constant per
+captured interval, the base→patched shift must be the same at every interval length — and measured across
+the three period clusters it is **+1.735 / +1.903 / +1.806 µs**. Constant across lengths *rules out* a
+proportional error rather than assuming it away.
+
 ## 2. Did any protocol decoder change its answer? — `lf_suite.py`
 
 Per protocol per build: a Proxmark writes the tag, **the Proxmark verifies it in place immediately before
